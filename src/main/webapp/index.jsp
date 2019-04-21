@@ -61,21 +61,16 @@
 
                         <div class="desc">
                             <div class="containerhead">
-                                <div class="profile-title">Profile</div>
+                                <div class="title">Search</div>
                             </div>
-                            <p>
-                                Some sidebar text. and links
-                            </p>
                         </div>
 
-                        <ul class="search">
-                            <form action="login" method="post" id="search-form">
-                                Name: <br>
-                                <input type="text" name="name">
-                                <br>
-                                <button id="search-button">Search</button>
-                            </form>
-                        </ul>
+                        <form id="search-form" onsubmit="return false;" class="">
+                            Name: <br>
+                            <input type="text" name="name">
+                            <br>
+                            <button id="search-button">Search</button>
+                        </form>
                     </div>
                 </div>
             </div>
