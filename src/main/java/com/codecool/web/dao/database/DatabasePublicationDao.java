@@ -16,15 +16,15 @@ public class DatabasePublicationDao extends AbstractDao implements PublicationDa
 
     @Override
     public List<Publication> findAll() throws SQLException {
+        List<Publication> publications = new ArrayList<>();
         String sql = "SELECT u_id, title, text_content, published_year FROM publications";
         try (Statement statement = connection.createStatement();
              ResultSet resultSet = statement.executeQuery(sql)) {
-             List<Publication> publications = new ArrayList<>();
              while (resultSet.next()) {
                 publications.add(fetchPublication(resultSet));
              }
-             return publications;
         }
+        return publications;
     }
 
     @Override

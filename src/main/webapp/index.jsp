@@ -7,10 +7,12 @@
     <c:url value="/login.js" var="loginScriptUrl"/>
     <c:url value="/profile.js" var="profileScriptUrl"/>
     <c:url value="/logout.js" var="logoutScriptUrl"/>
+    <c:url value="/publications.js" var="publicationsScriptUrl"/>
     <script src="${indexScriptUrl}"></script>
     <script src="${loginScriptUrl}"></script>
     <script src="${profileScriptUrl}"></script>
     <script src="${logoutScriptUrl}"></script>
+    <script src="${publicationsScriptUrl}"></script>
     <title>AJAX Poets</title>
     <link rel="stylesheet" type="text/css" href="TemplateForMyself_text.css">
 </head>
@@ -18,12 +20,12 @@
         <div class="wrapper">
             
             <div id="profile-content" class="hidden content">
-                <div class="container">
+                <div class="container" id="container-text">
                     <div class="containerhead">
                         <div class="title"><a href="">Your poems</a></div>
                     </div>
-                    <h1>Placeholder</h1>
-                        for ciklus regények ajax.
+                    <div id="poems">
+                    </div>
                     <div class="containerfoot"></div>
                 </div>
             </div>

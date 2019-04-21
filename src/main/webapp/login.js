@@ -3,6 +3,7 @@ function onLoginResponse() {
         const user = JSON.parse(this.responseText);
         setAuthorization(user);
         onProfileLoad(user);
+        onLoginPoet();
     } else {
         onOtherResponse(loginContentDivEl, this);
     }
