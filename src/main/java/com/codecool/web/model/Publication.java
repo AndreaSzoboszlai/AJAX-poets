@@ -1,20 +1,21 @@
 package com.codecool.web.model;
 
-public class Publication {
-    private int uId;
+public class Publication extends AbstractModel {
+    private int pId;
     private String title;
     private String content;
     private int publishedYear;
 
-    public Publication(int uId, String title, String content, int publishedYear) {
-        this.uId = uId;
+    public Publication(int uId, int pId, String title, String content, int publishedYear) {
+        super(uId);
+        this.pId = pId;
         this.title = title;
         this.content = content;
         this.publishedYear = publishedYear;
     }
 
-    public int getuId() {
-        return uId;
+    public int getpId() {
+        return pId;
     }
 
     public String getTitle() {

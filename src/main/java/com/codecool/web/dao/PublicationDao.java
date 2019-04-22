@@ -8,5 +8,8 @@ import java.util.List;
 
 public interface PublicationDao {
     List<Publication> findAll() throws SQLException;
+
     List<Publication> findPublicationForUser(User user) throws SQLException;
+
+    Publication findPoem(int pId) throws SQLException;
 }

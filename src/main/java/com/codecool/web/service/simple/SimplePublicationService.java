@@ -15,11 +15,18 @@ public class SimplePublicationService implements PublicationService {
         this.publicationDao = publicationDao;
     }
 
+    @Override
     public List<Publication> getAllPublication() throws SQLException {
         return publicationDao.findAll();
     }
 
+    @Override
     public List<Publication> getAllPublicationForUser(User user) throws SQLException {
         return publicationDao.findPublicationForUser(user);
+    }
+
+    @Override
+    public Publication getPoem(int pId) throws SQLException {
+        return publicationDao.findPoem(pId);
     }
 }
