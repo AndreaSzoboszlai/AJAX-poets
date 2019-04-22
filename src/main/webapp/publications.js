@@ -4,12 +4,16 @@ function removePoem() {
     onLoginPoet();
 }
 
-
-function onPoemLoad(poem) {
+function removePoemList() {
     const containerEl = document.getElementById('poems');
     while (containerEl.firstChild) {
         containerEl.removeChild(containerEl.firstChild);
     }
+}
+
+function onPoemLoad(poem) {
+    removePoemList();
+    const containerEl = document.getElementById('poems');
     containerEl.textContent = poem.content;
     var btn = document.createElement("BUTTON");
     btn.innerHTML = "Back to poems";
@@ -80,6 +84,7 @@ function onPoetResponse() {
 }
 
 function onLoginPoet() {
+    removePoemList();
     const loginFormEl = document.forms['login-form'];
 
     const nameInputEl = loginFormEl.querySelector('input[name="name"]');
