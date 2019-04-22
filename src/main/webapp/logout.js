@@ -19,6 +19,10 @@ function onLogoutButtonClicked(event) {
 function changeProfileLook() {
     const userTitleEl = document.getElementById('login-title');
     userTitleEl.textContent = "Login";
+    const counterEl = document.getElementById('counter');
+
+    counterEl.textContent = '';
+    counterEl.classList.add('hidden');
     document.getElementById("profile-content").classList.add('hidden');
     document.getElementById("login-form").classList.remove('hidden');
     document.getElementById("showprofile-content").classList.add('hidden');
