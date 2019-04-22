@@ -1,18 +1,21 @@
 function onSearchedPoem() {
+    const searchFormEl = document.forms['search-form'];
+    const searchedEl = '/' + searchFormEl.querySelector('input[name="searched"]').value + '/g';
+    console.log(searchedEl);
     const containerEl = document.getElementById('poems').textContent;
-    const count = (containerEl.match(/is/g) || []).length;
+    const count = containerEl.match(searchedEl).length;
+    console.log('h: ' + containerEl);
     console.log(count);
     document.getElementById('counter').classList.remove('hidden');
     const counterEl = document.getElementById('counter');
-    searchFormEl = document.forms['search-form'];
-    counterEl.textContent = 'Counted occurande of "' + searchFormEl.querySelector('input[name="searched"]').value + '": ' + count;
+    counterEl.textContent = 'Counted occurande of "' + searchedEl + '": ' + count;
 }
 
 function removePoem() {
     document.getElementById('main-head').textContent = 'Your poems';
     const containerEl = document.getElementById('poems');
     const counterEl = document.getElementById('counter');
-    containerEl.textContent = '';
+
     counterEl.textContent = '';
     counterEl.classList.add('hidden');
     document.getElementById("search-form").classList.add('hidden');

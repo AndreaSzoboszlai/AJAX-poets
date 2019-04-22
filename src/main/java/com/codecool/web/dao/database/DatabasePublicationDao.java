@@ -1,7 +1,6 @@
 package com.codecool.web.dao.database;
 
 import com.codecool.web.dao.PublicationDao;
-import com.codecool.web.model.Coupon;
 import com.codecool.web.model.Publication;
 import com.codecool.web.model.User;
 
