@@ -19,11 +19,11 @@ function onProfileLoad(user) {
     showContents(['profile-content']);
 
     const userNameSpandEl = document.getElementById('user-name');
-    const userPasswordSpanEl = document.getElementById('user-password');
+
     const userTitleEl = document.getElementById('login-title');
 
     userNameSpandEl.textContent = user.loginName;
-    userPasswordSpanEl.textContent = user.password;
+
     userTitleEl.textContent = "Profile";
 
     document.getElementById("login-form").classList.add('hidden');

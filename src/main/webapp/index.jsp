@@ -48,7 +48,6 @@
 
                                     <div id="showprofile-content" class="hidden">
                                         <p>Name: <span id="user-name"></span></p>
-                                        <p>Password: <span id="user-password"></span></p>
                                     </div>
                                     <div id="logout-content" class="hidden">
                                         <button id="logout-button">Logout</button>
