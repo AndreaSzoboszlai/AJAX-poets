@@ -1,16 +1,25 @@
+function removePoem() {
+    const containerEl = document.getElementById('poems');
+    containerEl.textContent = '';
+    onLoginPoet();
+}
+
+
 function onPoemLoad(poem) {
     const containerEl = document.getElementById('poems');
     while (containerEl.firstChild) {
         containerEl.removeChild(containerEl.firstChild);
     }
     containerEl.textContent = poem.content;
+    var btn = document.createElement("BUTTON");
+    btn.innerHTML = "Back to poems";
+    containerEl.appendChild(btn);
+    btn.setAttribute('id', 'back-button');
+    btn.addEventListener('click', removePoem);
 }
 
 function onPoemResponse() {
-    console.log('well shit');
-    console.log(this.responseText)
     if (this.status === OK) {
-        //needs to remove content
         onPoemLoad(JSON.parse(this.responseText));
     } else {
         onOtherResponse(couponsContentDivEl, this);
@@ -18,7 +27,6 @@ function onPoemResponse() {
 }
 
 function onClickedPoem() {
-console.log('Dataset: ' + this.dataset.poemId);
     const poemId = this.dataset.poemId;
     console.log(poemId);
     const params = new URLSearchParams();
@@ -59,13 +67,10 @@ function createPoetryTable(poems) {
 
 function onLoadPoet(poems) {
     const containerEl = document.getElementById('poems');
-    console.log(poems);
     containerEl.appendChild(createPoetryTable(poems));
 }
 
 function onPoetResponse() {
-    console.log("Fuck");
-    console.log(this.responseText);
     clearMessages();
     if (this.status === OK) {
         onLoadPoet(JSON.parse(this.responseText));
