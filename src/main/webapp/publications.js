@@ -1,6 +1,9 @@
 function removePoem() {
+    document.getElementById('main-head').textContent = 'Your poems';
     const containerEl = document.getElementById('poems');
     containerEl.textContent = '';
+    document.getElementById("search-form").classList.add('hidden');
+    document.getElementById("login-to-search").classList.remove('hidden');
     onLoginPoet();
 }
 
@@ -12,12 +15,20 @@ function removePoemList() {
 }
 
 function onPoemLoad(poem) {
+    document.getElementById('main-head').textContent = poem.title;
     removePoemList();
     const containerEl = document.getElementById('poems');
     containerEl.textContent = poem.content;
     var btn = document.createElement("BUTTON");
     btn.innerHTML = "Back to poems";
     containerEl.appendChild(btn);
+
+    document.getElementById("search-form").classList.remove('hidden');
+    document.getElementById("login-to-search").classList.add('hidden');
+
+    const searchbtn = document.getElementById('search-button');
+    //searchbtn.addEventListener('click');
+
     btn.setAttribute('id', 'back-button');
     btn.addEventListener('click', removePoem);
 }

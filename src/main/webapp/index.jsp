@@ -22,7 +22,7 @@
             <div id="profile-content" class="hidden content">
                 <div class="container" id="container-text">
                     <div class="containerhead">
-                        <div class="title"><a href="">Your poems</a></div>
+                        <div id="main-head" class="title"><a href="">Your poems</a></div>
                     </div>
                     <div id="poems">
                     </div>
@@ -66,13 +66,15 @@
                                 <div class="title">Search</div>
                             </div>
                         </div>
-
-                        <form id="search-form" onsubmit="return false;" class="">
+                        <p id="login-to-search" class=""> Go to poems to be able to search for word occurances. </p>
+                        <form id="search-form" onsubmit="return false;" class="hidden">
                             Name: <br>
                             <input type="text" name="name">
                             <br>
                             <button id="search-button">Search</button>
                         </form>
+                        <div id="counter" class="hidden">
+                        </div>
                     </div>
                 </div>
             </div>
