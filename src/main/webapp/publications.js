@@ -1,11 +1,11 @@
 function onSearchedPoem() {
     const searchFormEl = document.forms['search-form'];
-    const searchedEl = '/' + searchFormEl.querySelector('input[name="searched"]').value + '/g';
-    console.log(searchedEl);
+    const searchedEl = searchFormEl.querySelector('input[name="searched"]').value;
+
     const containerEl = document.getElementById('poems').textContent;
-    const count = containerEl.match(searchedEl).length;
-    console.log('h: ' + containerEl);
-    console.log(count);
+    const regexS = new RegExp(searchedEl, 'g');
+    const count = (containerEl.match(regexS) || []).length;
+
     document.getElementById('counter').classList.remove('hidden');
     const counterEl = document.getElementById('counter');
     counterEl.textContent = 'Counted occurande of "' + searchedEl + '": ' + count;
@@ -59,10 +59,10 @@ function onPoemResponse() {
 
 function onClickedPoem() {
     const poemId = this.dataset.poemId;
-    console.log(poemId);
+
     const params = new URLSearchParams();
     params.append('id', poemId);
-    console.log(params);
+
     const xhr = new XMLHttpRequest();
     xhr.addEventListener('load', onPoemResponse);
     xhr.addEventListener('error', onNetworkError);

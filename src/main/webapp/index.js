@@ -45,7 +45,7 @@ function showContents(ids) {
 
     for (let i = 0; i < contentEls.length; i++) {
         const contentEl = contentEls[i];
-        console.log(contentEl);
+
         if (ids.includes(contentEl.id)) {
             contentEl.classList.remove('hidden');
         } else {
