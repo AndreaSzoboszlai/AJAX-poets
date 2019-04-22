@@ -69,10 +69,11 @@
                         <p id="login-to-search" class=""> Go to poems to be able to search for word occurances. </p>
                         <form id="search-form" onsubmit="return false;" class="hidden">
                             Name: <br>
-                            <input type="text" name="name">
+                            <input type="text" name="searched">
                             <br>
                             <button id="search-button">Search</button>
                         </form>
+                        <br>
                         <div id="counter" class="hidden">
                         </div>
                     </div>

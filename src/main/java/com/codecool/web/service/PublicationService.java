@@ -11,4 +11,5 @@ public interface PublicationService {
     List<Publication> getAllPublication() throws SQLException, ServiceException;
     List<Publication> getAllPublicationForUser(User user) throws SQLException, ServiceException;
     Publication getPoem(int pId) throws SQLException;
+    String getPoemContent(int pId) throws SQLException;
 }

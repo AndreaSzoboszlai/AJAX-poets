@@ -29,4 +29,9 @@ public class SimplePublicationService implements PublicationService {
     public Publication getPoem(int pId) throws SQLException {
         return publicationDao.findPoem(pId);
     }
+
+    @Override
+    public String getPoemContent(int pId) throws SQLException {
+        return publicationDao.findPoem(pId).getContent();
+    }
 }

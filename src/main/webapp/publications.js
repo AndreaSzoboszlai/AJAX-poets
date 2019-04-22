@@ -1,7 +1,20 @@
+function onSearchedPoem() {
+    const containerEl = document.getElementById('poems').textContent;
+    const count = (containerEl.match(/is/g) || []).length;
+    console.log(count);
+    document.getElementById('counter').classList.remove('hidden');
+    const counterEl = document.getElementById('counter');
+    searchFormEl = document.forms['search-form'];
+    counterEl.textContent = 'Counted occurande of "' + searchFormEl.querySelector('input[name="searched"]').value + '": ' + count;
+}
+
 function removePoem() {
     document.getElementById('main-head').textContent = 'Your poems';
     const containerEl = document.getElementById('poems');
+    const counterEl = document.getElementById('counter');
     containerEl.textContent = '';
+    counterEl.textContent = '';
+    counterEl.classList.add('hidden');
     document.getElementById("search-form").classList.add('hidden');
     document.getElementById("login-to-search").classList.remove('hidden');
     onLoginPoet();
@@ -27,7 +40,7 @@ function onPoemLoad(poem) {
     document.getElementById("login-to-search").classList.add('hidden');
 
     const searchbtn = document.getElementById('search-button');
-    //searchbtn.addEventListener('click');
+    searchbtn.addEventListener('click', onSearchedPoem);
 
     btn.setAttribute('id', 'back-button');
     btn.addEventListener('click', removePoem);
